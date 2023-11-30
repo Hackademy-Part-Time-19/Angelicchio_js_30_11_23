@@ -12,7 +12,7 @@
         <input type="text" id="titolo" style="font-size: 50px;">
         <label>Paragrafo:</label>
         <input type="text" id="paragrafo" style="font-size: 50px;">
-        <input type="button" value="submit" style="font-size: 50px;" onclick="nuovoParagrafo()">
+        <input type="button" value="invio" style="font-size: 50px;" onclick="nuovoParagrafo()">
     </form>
     
     <script>
@@ -29,10 +29,24 @@
 
         function aggiungi(titolo, paragrafo){
             var nuovoDiv = document.createElement('div');
-            nuovoDiv.innerHTML = nuovoDiv.innerHTML = `<h2>${titolo}</h2><p>${paragrafo}</p>`;
+            nuovoDiv.className = 'mioDiv';
+            var dataCorrente = new Date();
+            var data = dataCorrente.toLocaleDateString();
+            nuovoDiv.innerHTML = nuovoDiv.innerHTML = `<h2>${titolo}</h2><p>${paragrafo}</p><p>${data}</p>`;
             document.body.appendChild(nuovoDiv);
         }
     </script>
-
+    <style>
+        .mioDiv {
+            font-size: 50px;
+            background-color: aqua;
+            width: 800px;
+            border: solid 1px blue;
+            border-radius: 5%;
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
 </body>
 </html>
