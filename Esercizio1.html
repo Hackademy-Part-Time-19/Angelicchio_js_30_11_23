@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" style="font-size: 50px;">
+        <label>Titolo:</label>
+        <input type="text" id="titolo" style="font-size: 50px;">
+        <label>Paragrafo:</label>
+        <input type="text" id="paragrafo" style="font-size: 50px;">
+        <input type="button" value="submit" style="font-size: 50px;" onclick="nuovoParagrafo()">
+    </form>
+    
+    <script>
+        function nuovoParagrafo(){
+            let titolo = document.getElementById("titolo").value;
+            let paragrafo = document.getElementById("paragrafo").value;
+            if (titolo==""||paragrafo==""){
+                alert("errore: inserire titolo e paragrafo")
+            }
+            else{
+            aggiungi(titolo, paragrafo);
+            }
+        }
+
+        function aggiungi(titolo, paragrafo){
+            var nuovoDiv = document.createElement('div');
+            nuovoDiv.innerHTML = nuovoDiv.innerHTML = `<h2>${titolo}</h2><p>${paragrafo}</p>`;
+            document.body.appendChild(nuovoDiv);
+        }
+    </script>
+
+</body>
+</html>
