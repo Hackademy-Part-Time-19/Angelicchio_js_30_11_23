@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+    </style>
+
+</head>
+<body>
+    <img id="sfondo">
+
+    <script> 
+        let immagini = [
+            "https://www.dariocapozzi.it/wp-content/uploads/2022/09/background-image-css.jpg",
+            "https://img.freepik.com/free-vector/luxury-gradient-modern-abstract-background_343694-1911.jpg",
+            "https://www.rotomail.it/wp-content/uploads/revslider/slider-2/SFONDO-VIDEO.jpg"
+        ];
+        let i = 0
+        let elemento=0
+        let sfondoElement = document.getElementById("sfondo");
+        timer = setInterval(function(){
+            i++;
+            if(i==5){
+                sfondoElement.src = immagini[elemento];
+                i=0;
+                elemento++;
+                if(elemento==3){
+                    elemento=0;
+                }
+            }
+        }, 1000);
+
+    </script>
+
+</body>
+</html>
